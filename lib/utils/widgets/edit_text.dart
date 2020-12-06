@@ -17,7 +17,7 @@ class T4EditText extends StatefulWidget {
 
   T4EditText(
       {var this.fontSize = textSizeNormal,
-      var this.textColor = t4_textColorSecondary,
+      var this.textColor = textColorSecondary,
       var this.fontFamily = fontRegular,
       var this.isPassword = true,
       var this.hint = "",
@@ -41,7 +41,7 @@ class T4EditTextState extends State<T4EditText> {
       style: TextStyle(
           fontSize: textSizeLargeMedium,
           fontFamily: fontRegular,
-          color: t4_white),
+          color: white),
       decoration: InputDecoration(
         suffixIcon: widget.isSecure
             ? GestureDetector(
@@ -52,18 +52,18 @@ class T4EditTextState extends State<T4EditText> {
                 },
                 child: new Icon(
                   widget.isPassword ? Icons.visibility : Icons.visibility_off,
-                  color: t4_white,
+                  color: white,
                 ),
               )
             : null,
         contentPadding: EdgeInsets.fromLTRB(16, 10, 16, 10),
         hintText: widget.hint,
-        hintStyle: TextStyle(color: t4_white),
+        hintStyle: TextStyle(color: white),
         enabledBorder: OutlineInputBorder(
-          borderSide: const BorderSide(color: t4_white, width: 0.5),
+          borderSide: const BorderSide(color: white, width: 0.5),
         ),
         focusedBorder: OutlineInputBorder(
-          borderSide: const BorderSide(color: t4_white, width: 0.5),
+          borderSide: const BorderSide(color: white, width: 0.5),
         ),
       ),
     );

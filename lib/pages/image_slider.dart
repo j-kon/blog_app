@@ -9,15 +9,15 @@ import 'package:blog_app/utils/extension.dart';
 import 'package:blog_app/utils/images.dart';
 import 'package:blog_app/utils/widgets.dart';
 
-class T4ImageSlider extends StatefulWidget {
-  static var tag = "/T4ImageSlider";
+class ImageSlider extends StatefulWidget {
+  static var tag = "/ImageSlider";
 
   @override
-  T4ImageSliderState createState() => T4ImageSliderState();
+  ImageSliderState createState() => ImageSliderState();
 }
 
-class T4ImageSliderState extends State<T4ImageSlider> {
-  List<T4NewsModel> mHorizontalListings;
+class ImageSliderState extends State<ImageSlider> {
+  List<NewsModel> mHorizontalListings;
 
   @override
   void initState() {
@@ -29,9 +29,9 @@ class T4ImageSliderState extends State<T4ImageSlider> {
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
     var height = MediaQuery.of(context).size.height;
-    changeStatusColor(t4_app_background);
+    changeStatusColor(app_background);
     return Scaffold(
-      backgroundColor: t4_app_background,
+      backgroundColor: app_background,
       body: Container(
         child: Column(
           children: <Widget>[
@@ -69,12 +69,12 @@ class T4ImageSliderState extends State<T4ImageSlider> {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: <Widget>[
                                     text(mHorizontalListings[index].name,
-                                        textColor: t4_textColorPrimary,
+                                        textColor: textColorPrimary,
                                         fontSize: textSizeLargeMedium,
                                         fontFamily: fontBold),
                                     text(mHorizontalListings[index].info,
                                         fontSize: textSizeMedium,
-                                        textColor: t4_textColorPrimary),
+                                        textColor: textColorPrimary),
                                   ],
                                 ),
                               ),
@@ -83,7 +83,7 @@ class T4ImageSliderState extends State<T4ImageSlider> {
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 children: <Widget>[
                                   SvgPicture.asset(
-                                    t4_heart,
+                                    heart,
                                     width: 24,
                                     height: 24,
                                   ),
@@ -91,10 +91,10 @@ class T4ImageSliderState extends State<T4ImageSlider> {
                                     width: 16,
                                   ),
                                   SvgPicture.asset(
-                                    t4_share,
+                                    share,
                                     width: 24,
                                     height: 24,
-                                    color: t4_textColorPrimary,
+                                    color: textColorPrimary,
                                   ),
                                 ],
                               )

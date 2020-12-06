@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class T4NewsModel {
+class NewsModel {
   var name = "";
   var image = "";
   var info = "";

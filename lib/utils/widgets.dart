@@ -6,7 +6,7 @@ import 'constant.dart';
 
 Widget text(String text,
     {var fontSize = textSizeLargeMedium,
-    textColor = t4_textColorSecondary,
+    textColor = textColorSecondary,
     var fontFamily = fontRegular,
     var isCentered = false,
     var maxLine = 1,
@@ -26,19 +26,19 @@ Widget text(String text,
 
 showToast(BuildContext aContext, String caption) {
   Scaffold.of(aContext).showSnackBar(
-      SnackBar(content: text(caption, textColor: t4_white, isCentered: true)));
+      SnackBar(content: text(caption, textColor: white, isCentered: true)));
 }
 
 BoxDecoration boxDecoration(
     {double radius = 2,
     Color color = Colors.transparent,
-    Color bgColor = t4_white,
+    Color bgColor = white,
     var showShadow = false}) {
   return BoxDecoration(
       //gradient: LinearGradient(colors: [bgColor, whiteColor]),
       color: bgColor,
       boxShadow: showShadow
-          ? [BoxShadow(color: t4_shadow_color, blurRadius: 10, spreadRadius: 2)]
+          ? [BoxShadow(color: shadow_color, blurRadius: 10, spreadRadius: 2)]
           : [BoxShadow(color: Colors.transparent)],
       border: Border.all(color: color),
       borderRadius: BorderRadius.all(Radius.circular(radius)));
@@ -99,7 +99,7 @@ class TopBarState extends State<TopBar> {
               padding: EdgeInsets.fromLTRB(20, 0, 0, 0),
               child: Center(
                 child: text(widget.titleName,
-                    textColor: t4_textColorPrimary,
+                    textColor: textColorPrimary,
                     fontSize: textSizeNormal,
                     fontFamily: fontBold),
               ),
@@ -125,7 +125,7 @@ class TopBarState extends State<TopBar> {
 Widget divider() {
   return Divider(
     height: 0.5,
-    color: t4_view_color,
+    color: view_color,
   );
 }
 
@@ -140,13 +140,13 @@ Widget ring(String description) {
           borderRadius: BorderRadius.circular(150.0),
           border: Border.all(
             width: 16.0,
-            color: t4_colorPrimary,
+            color: colorPrimary,
           ),
         ),
       ),
       SizedBox(height: 16),
       text(description,
-          textColor: t4_textColorPrimary,
+          textColor: textColorPrimary,
           fontSize: textSizeNormal,
           fontFamily: fontSemibold,
           isCentered: true,

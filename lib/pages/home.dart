@@ -11,18 +11,18 @@ import 'package:blog_app/utils/images.dart';
 import 'package:blog_app/utils/widgets.dart';
 import 'package:blog_app/utils/widgets/bottom_navigationbar.dart';
 
-class T4Dashboard extends StatefulWidget {
-  static var tag = "/T4Dashboard";
+class Home extends StatefulWidget {
+  static var tag = "/Home";
 
   @override
-  T4DashboardState createState() => T4DashboardState();
+  HomeState createState() => HomeState();
 }
 
-class T4DashboardState extends State<T4Dashboard> {
+class HomeState extends State<Home> {
   int selectedPos = 1;
-  List<T4NewsModel> mCategories;
-  List<T4NewsModel> mHorizontalListings;
-  List<T4NewsModel> mListings;
+  List<NewsModel> mCategories;
+  List<NewsModel> mHorizontalListings;
+  List<NewsModel> mListings;
   int _selectedIndex = 0;
 
   @override
@@ -46,10 +46,10 @@ class T4DashboardState extends State<T4Dashboard> {
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
     var height = MediaQuery.of(context).size.height;
-    changeStatusColor(t4_app_background);
+    changeStatusColor(app_background);
 
     return Scaffold(
-      backgroundColor: t4_app_background,
+      backgroundColor: app_background,
       body: Container(
         child: SingleChildScrollView(
           child: Column(
@@ -76,7 +76,7 @@ class T4DashboardState extends State<T4Dashboard> {
                               decoration: boxDecoration(
                                   radius: 4, bgColor: mCategories[index].color),
                               child: text(mCategories[index].category,
-                                  textColor: t4_white, fontFamily: fontMedium),
+                                  textColor: white, fontFamily: fontMedium),
                             );
                           }),
                     ),
@@ -120,7 +120,7 @@ class T4DashboardState extends State<T4Dashboard> {
                                                   mHorizontalListings[index]
                                                       .name,
                                                   textColor:
-                                                      t4_textColorPrimary,
+                                                      textColorPrimary,
                                                   fontSize: textSizeLargeMedium,
                                                   fontFamily: fontBold),
                                               text(
@@ -128,7 +128,7 @@ class T4DashboardState extends State<T4Dashboard> {
                                                       .info,
                                                   fontSize: textSizeMedium,
                                                   textColor:
-                                                      t4_textColorPrimary),
+                                                      textColorPrimary),
                                             ],
                                           ),
                                         ),
@@ -139,7 +139,7 @@ class T4DashboardState extends State<T4Dashboard> {
                                               CrossAxisAlignment.center,
                                           children: <Widget>[
                                             SvgPicture.asset(
-                                              t4_heart,
+                                              heart,
                                               width: 24,
                                               height: 24,
                                             ),
@@ -147,10 +147,10 @@ class T4DashboardState extends State<T4Dashboard> {
                                               width: 16,
                                             ),
                                             SvgPicture.asset(
-                                              t4_share,
+                                              share,
                                               width: 24,
                                               height: 24,
-                                              color: t4_textColorPrimary,
+                                              color: textColorPrimary,
                                             ),
                                           ],
                                         )
@@ -190,12 +190,12 @@ class T4DashboardState extends State<T4Dashboard> {
                                 borderRadius: BorderRadius.circular(4),
                               ),
                               text(mListings[index].name,
-                                  textColor: t4_textColorPrimary,
+                                  textColor: textColorPrimary,
                                   fontSize: textSizeLargeMedium,
                                   fontFamily: fontBold),
                               text(mListings[index].info,
                                   fontSize: textSizeMedium,
-                                  textColor: t4_textColorPrimary),
+                                  textColor: textColorPrimary),
                             ],
                           ),
                         ),
@@ -211,7 +211,7 @@ class T4DashboardState extends State<T4Dashboard> {
       bottomNavigationBar: Container(
         decoration: BoxDecoration(boxShadow: [
           BoxShadow(
-              color: t4_shadow_color,
+              color: shadow_color,
               offset: Offset.fromDirection(3, 1),
               spreadRadius: 1,
               blurRadius: 5)
@@ -219,22 +219,22 @@ class T4DashboardState extends State<T4Dashboard> {
         child: T4BottomNavigationBar(
           items: const <T4BottomNavigationBarItem>[
             T4BottomNavigationBarItem(
-              icon: t4_home,
+              icon: home,
             ),
             T4BottomNavigationBarItem(
-              icon: t4_playbutton,
+              icon: playbutton,
             ),
             T4BottomNavigationBarItem(
-              icon: t4_heart,
+              icon: heart,
             ),
             T4BottomNavigationBarItem(
-              icon: t4_user,
+              icon: user,
             ),
           ],
           currentIndex: _selectedIndex,
           unselectedIconTheme:
-              IconThemeData(color: t4_textColorSecondary, size: 24),
-          selectedIconTheme: IconThemeData(color: t4_colorPrimary, size: 24),
+              IconThemeData(color: textColorSecondary, size: 24),
+          selectedIconTheme: IconThemeData(color: colorPrimary, size: 24),
           onTap: _onItemTapped,
           type: T4BottomNavigationBarType.fixed,
         ),

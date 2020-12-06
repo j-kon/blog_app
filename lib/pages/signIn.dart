@@ -11,14 +11,14 @@ import 'package:blog_app/utils/widgets.dart';
 import 'package:blog_app/utils/widgets/button.dart';
 import 'package:blog_app/utils/widgets/edit_text.dart';
 
-class T4SignIn extends StatefulWidget {
-  static String tag = '/T4SignIn';
+class SignIn extends StatefulWidget {
+  static String tag = '/SignIn';
 
   @override
-  T4SignInState createState() => T4SignInState();
+  SignInState createState() => SignInState();
 }
 
-class T4SignInState extends State<T4SignIn> {
+class SignInState extends State<SignIn> {
   @override
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
@@ -28,7 +28,7 @@ class T4SignInState extends State<T4SignIn> {
       body: Stack(
         children: <Widget>[
           CachedNetworkImage(
-            imageUrl: t4_bg,
+            imageUrl: bg,
             width: width,
             height: height,
             fit: BoxFit.cover,
@@ -48,19 +48,19 @@ class T4SignInState extends State<T4SignIn> {
                 margin: EdgeInsets.only(left: 24, right: 24, top: height * 0.1),
                 child: Column(
                   children: <Widget>[
-                    CachedNetworkImage(imageUrl: t4_icon, width: width / 3.2),
+                    CachedNetworkImage(imageUrl: icon, width: width / 3.2),
                     SizedBox(height: 40),
-                    T4EditText(hint: t4_hint_Email, isPassword: false),
+                    T4EditText(hint: hint_Email, isPassword: false),
                     SizedBox(height: 24),
-                    T4EditText(hint: t4_hint_password, isSecure: true),
+                    T4EditText(hint: hint_password, isSecure: true),
                     SizedBox(height: 24),
-                    T4Button(
-                      textContent: t4_lbl_login,
+                    Button(
+                      textContent: lbl_login,
                       onPressed: () {},
                     ),
                     SizedBox(height: 48),
-                    text(t4_lbl_login_with,
-                        textColor: t4_white,
+                    text(lbl_login_with,
+                        textColor: white,
                         fontFamily: fontMedium,
                         fontSize: textSizeLargeMedium),
                     SizedBox(height: 24),
@@ -73,10 +73,9 @@ class T4SignInState extends State<T4SignIn> {
                           padding: EdgeInsets.all(width / 30),
                           decoration: BoxDecoration(
                             shape: BoxShape.circle,
-                            color: t4_white,
+                            color: white,
                           ),
-                          child: SvgPicture.asset(t4_google,
-                              color: t4_form_google),
+                          child: SvgPicture.asset(google, color: form_google),
                         ),
                         SizedBox(
                           width: 24,
@@ -87,10 +86,9 @@ class T4SignInState extends State<T4SignIn> {
                           padding: EdgeInsets.all(width / 30),
                           decoration: BoxDecoration(
                             shape: BoxShape.circle,
-                            color: t4_white,
+                            color: white,
                           ),
-                          child:
-                              SvgPicture.asset(t4_fb, color: t4_form_facebook),
+                          child: SvgPicture.asset(fb, color: form_facebook),
                         )
                       ],
                     )

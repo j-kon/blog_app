@@ -7,14 +7,14 @@ import 'package:blog_app/utils/strings.dart';
 import 'package:blog_app/utils/widgets.dart';
 import 'package:blog_app/utils/widgets/button.dart';
 
-class T4Dialog extends StatefulWidget {
-  static var tag = "/T4Dialog";
+class DialogS extends StatefulWidget {
+  static var tag = "/Dialog";
 
   @override
-  T4DialogState createState() => T4DialogState();
+  DialogSState createState() => DialogSState();
 }
 
-class T4DialogState extends State<T4Dialog> {
+class DialogSState extends State<DialogS> {
   @override
   Widget build(BuildContext context) {
     Future.delayed(const Duration(milliseconds: 1000), () {
@@ -23,7 +23,7 @@ class T4DialogState extends State<T4Dialog> {
         builder: (BuildContext context) => CustomDialog(),
       );
     });
-    return T4SignIn();
+    return SignIn();
   }
 }
 
@@ -64,21 +64,21 @@ dialogContent(BuildContext context) {
               fontSize: textSizeLargeMedium,
               maxLine: 2,
               isCentered: true,
-              textColor: t4_textColorPrimary,
+              textColor: textColorPrimary,
               fontFamily: fontSemibold),
           SizedBox(height: 30),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              T4Button(
-                textContent: t4_lbl_allow,
+              Button(
+                textContent: lbl_allow,
                 onPressed: () {},
               ),
               SizedBox(
                 width: 24,
               ),
-              T4Button(
-                textContent: t4_lbl_deny,
+              Button(
+                textContent: lbl_deny,
                 isStroked: true,
                 onPressed: () {},
               ),

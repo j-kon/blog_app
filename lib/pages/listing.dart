@@ -8,16 +8,16 @@ import 'package:blog_app/utils/extension.dart';
 import 'package:blog_app/utils/strings.dart';
 import 'package:blog_app/utils/widgets.dart';
 
-class T4Listing extends StatefulWidget {
-  static var tag = "/T4Listing";
+class Listing extends StatefulWidget {
+  static var tag = "/Listing";
 
   @override
-  T4ListingState createState() => T4ListingState();
+  ListingState createState() => ListingState();
 }
 
-class T4ListingState extends State<T4Listing> {
+class ListingState extends State<Listing> {
   int selectedPos = 1;
-  List<T4NewsModel> mListings;
+  List<NewsModel> mListings;
 
   @override
   void initState() {
@@ -29,14 +29,14 @@ class T4ListingState extends State<T4Listing> {
   @override
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
-    changeStatusColor(t4_app_background);
+    changeStatusColor(app_background);
 
     return Scaffold(
-      backgroundColor: t4_app_background,
+      backgroundColor: app_background,
       body: Container(
         child: Column(
           children: <Widget>[
-            TopBar(t4_lbl_listing),
+            TopBar(lbl_listing),
             Expanded(
               child: ListView.builder(
                   scrollDirection: Axis.vertical,
@@ -71,12 +71,12 @@ class T4ListingState extends State<T4Listing> {
                                               CrossAxisAlignment.start,
                                           children: <Widget>[
                                             text(mListings[index].name,
-                                                textColor: t4_textColorPrimary,
+                                                textColor: textColorPrimary,
                                                 fontSize: textSizeLargeMedium,
                                                 fontFamily: fontBold),
                                             text(mListings[index].info,
                                                 fontSize: textSizeMedium,
-                                                textColor: t4_textColorPrimary),
+                                                textColor: textColorPrimary),
                                             SizedBox(
                                               height: 4,
                                             ),

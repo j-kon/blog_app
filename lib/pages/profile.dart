@@ -10,16 +10,16 @@ import 'package:blog_app/utils/images.dart';
 import 'package:blog_app/utils/strings.dart';
 import 'package:blog_app/utils/widgets.dart';
 
-class T4Profile extends StatefulWidget {
-  static var tag = "/T4Profile";
+class Profile extends StatefulWidget {
+  static var tag = "/Profile";
 
   @override
-  T4ProfileState createState() => T4ProfileState();
+  ProfileState createState() => ProfileState();
 }
 
-class T4ProfileState extends State<T4Profile> {
+class ProfileState extends State<Profile> {
   int selectedPos = 1;
-  List<T4NewsModel> mListings;
+  List<NewsModel> mListings;
 
   @override
   void initState() {
@@ -43,12 +43,12 @@ class T4ProfileState extends State<T4Profile> {
                     icon,
                     width: 20,
                     height: 20,
-                    color: t4_colorPrimary,
+                    color: colorPrimary,
                   ),
                   SizedBox(
                     width: 16,
                   ),
-                  text(name, textColor: t4_textColorPrimary)
+                  text(name, textColor: textColorPrimary)
                 ],
               ),
             ),
@@ -70,14 +70,14 @@ class T4ProfileState extends State<T4Profile> {
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
     var height = MediaQuery.of(context).size.height;
-    changeStatusColor(t4_app_background);
+    changeStatusColor(app_background);
 
     return Scaffold(
-      backgroundColor: t4_app_background,
+      backgroundColor: app_background,
       body: Container(
         child: Column(
           children: <Widget>[
-            TopBar(t4_lbl_profile),
+            TopBar(lbl_profile),
             Expanded(
               child: SingleChildScrollView(
                 child: Container(
@@ -88,7 +88,7 @@ class T4ProfileState extends State<T4Profile> {
                     child: Stack(
                       children: <Widget>[
                         CachedNetworkImage(
-                          imageUrl: t4_profile_covr_page,
+                          imageUrl: profile_covr_page,
                           height: height * 0.3,
                           fit: BoxFit.fill,
                         ),
@@ -106,10 +106,10 @@ class T4ProfileState extends State<T4Profile> {
                                 Container(
                                   padding: EdgeInsets.all(4),
                                   decoration: BoxDecoration(
-                                      shape: BoxShape.circle, color: t4_white),
+                                      shape: BoxShape.circle, color: white),
                                   child: CircleAvatar(
                                     backgroundImage:
-                                        CachedNetworkImageProvider(t4_profile),
+                                        CachedNetworkImageProvider(profile),
                                     radius: width * 0.15,
                                   ),
                                 ),
@@ -119,11 +119,11 @@ class T4ProfileState extends State<T4Profile> {
                                 Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: <Widget>[
-                                    text(t4_username,
-                                        textColor: t4_textColorPrimary,
+                                    text(username,
+                                        textColor: textColorPrimary,
                                         fontFamily: fontBold,
                                         fontSize: textSizeLargeMedium),
-                                    text(t4_designation,
+                                    text(designation,
                                         fontFamily: fontMedium,
                                         fontSize: textSizeMedium),
                                   ],
@@ -133,11 +133,11 @@ class T4ProfileState extends State<T4Profile> {
                             SizedBox(
                               height: 24,
                             ),
-                            getItem(t4_lbl_offer, t4_home),
-                            getItem(t4_lbl_notification, t4_bell),
-                            getItem(t4_lbl_terms_conditions, t4_file),
-                            getItem(t4_lbl_help_support, t4_help),
-                            getItem(t4_lbl_logout, t4_logout),
+                            getItem(lbl_offer, home),
+                            getItem(lbl_notification, bell),
+                            getItem(lbl_terms_conditions, file),
+                            getItem(lbl_help_support, help),
+                            getItem(lbl_logout, logout),
                             SizedBox(
                               height: 24,
                             ),

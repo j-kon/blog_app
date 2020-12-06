@@ -11,14 +11,14 @@ import 'package:blog_app/utils/strings.dart';
 import 'package:blog_app/utils/widgets.dart';
 import 'package:blog_app/utils/widgets/button.dart';
 
-class T4WalkThrough extends StatefulWidget {
+class WalkThrough extends StatefulWidget {
   static var tag = "/T4WalkThrough";
 
   @override
-  T4WalkThroughState createState() => T4WalkThroughState();
+  WalkThroughState createState() => WalkThroughState();
 }
 
-class T4WalkThroughState extends State<T4WalkThrough> {
+class WalkThroughState extends State<WalkThrough> {
   int currentIndexPage = 0;
 
   PageController _controller = new PageController();
@@ -56,7 +56,7 @@ class T4WalkThroughState extends State<T4WalkThrough> {
         body: Stack(
       children: <Widget>[
         Image.asset(
-          t4_walk_bg,
+          walk_bg,
           width: width * 0.8,
           height: height * 0.5,
           fit: BoxFit.fill,
@@ -67,9 +67,9 @@ class T4WalkThroughState extends State<T4WalkThrough> {
           child: PageView(
             controller: _controller,
             children: <Widget>[
-              WalkThrough(textContent: latest_news_daily, walkImg: t4_walk1),
-              WalkThrough(textContent: regularNotifications, walkImg: t4_walk2),
-              WalkThrough(textContent: awardWinningApp, walkImg: t4_walk3),
+              WalkThrough1(textContent: latest_news_daily, walkImg: walk1),
+              WalkThrough1(textContent: regularNotifications, walkImg: walk2),
+              WalkThrough1(textContent: awardWinningApp, walkImg: walk3),
             ],
             onPageChanged: (value) {
               setState(() => currentIndexPage = value);
@@ -84,15 +84,15 @@ class T4WalkThroughState extends State<T4WalkThrough> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
-                Align(child: T4Button(textContent: "Prev", onPressed: onPrev)),
+                Align(child: Button(textContent: "Prev", onPressed: onPrev)),
                 DotsIndicator(
                     dotsCount: 3,
                     position: currentIndexPage,
                     decorator: DotsDecorator(
-                      color: t4_view_color,
-                      activeColor: t4_colorPrimary,
+                      color: view_color,
+                      activeColor: colorPrimary,
                     )),
-                T4Button(
+                Button(
                   textContent: "Next",
                   onPressed: onNext,
                   isStroked: true,
@@ -106,11 +106,11 @@ class T4WalkThroughState extends State<T4WalkThrough> {
   }
 }
 
-class WalkThrough extends StatelessWidget {
+class WalkThrough1 extends StatelessWidget {
   final String textContent;
   final String walkImg;
 
-  WalkThrough({Key key, this.textContent, this.walkImg}) : super(key: key);
+  WalkThrough1({Key key, this.textContent, this.walkImg}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -136,7 +136,7 @@ class WalkThrough extends StatelessWidget {
             height: h * 0.08,
           ),
           text(textContent,
-              textColor: t4_textColorPrimary,
+              textColor: textColorPrimary,
               fontSize: textSizeNormal,
               fontFamily: fontMedium),
           Padding(

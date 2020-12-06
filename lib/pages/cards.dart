@@ -10,16 +10,16 @@ import 'package:blog_app/utils/images.dart';
 import 'package:blog_app/utils/strings.dart';
 import 'package:blog_app/utils/widgets.dart';
 
-class T4Cards extends StatefulWidget {
-  static var tag = "/T4Cards";
+class Cards extends StatefulWidget {
+  static var tag = "/Cards";
 
   @override
-  T4CardsState createState() => T4CardsState();
+  CardsState createState() => CardsState();
 }
 
-class T4CardsState extends State<T4Cards> {
+class CardsState extends State<Cards> {
   int selectedPos = 1;
-  List<T4NewsModel> mCardss;
+  List<NewsModel> mCardss;
 
   @override
   void initState() {
@@ -32,14 +32,14 @@ class T4CardsState extends State<T4Cards> {
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
     var height = MediaQuery.of(context).size.height;
-    changeStatusColor(t4_app_background);
+    changeStatusColor(app_background);
 
     return Scaffold(
-      backgroundColor: t4_app_background,
+      backgroundColor: app_background,
       body: Container(
         child: Column(
           children: <Widget>[
-            TopBar(t4_lbl_cards),
+            TopBar(lbl_cards),
             Expanded(
               child: ListView.builder(
                   scrollDirection: Axis.vertical,
@@ -71,11 +71,11 @@ class T4CardsState extends State<T4Cards> {
                                   height: 50,
                                   child: Icon(
                                     Icons.play_arrow,
-                                    color: t4_colorPrimary,
+                                    color: colorPrimary,
                                     size: 30,
                                   ),
                                   decoration: BoxDecoration(
-                                      shape: BoxShape.circle, color: t4_white),
+                                      shape: BoxShape.circle, color: white),
                                 )
                               ],
                               alignment: Alignment.center,
@@ -90,12 +90,12 @@ class T4CardsState extends State<T4Cards> {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: <Widget>[
                                     text(mCardss[index].name,
-                                        textColor: t4_textColorPrimary,
+                                        textColor: textColorPrimary,
                                         fontSize: textSizeLargeMedium,
                                         fontFamily: fontBold),
                                     text(mCardss[index].info,
                                         fontSize: textSizeMedium,
-                                        textColor: t4_textColorPrimary),
+                                        textColor: textColorPrimary),
                                   ],
                                 ),
                               ),
@@ -104,7 +104,7 @@ class T4CardsState extends State<T4Cards> {
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 children: <Widget>[
                                   SvgPicture.asset(
-                                    t4_heart,
+                                    heart,
                                     width: 22,
                                     height: 22,
                                   ),
@@ -112,10 +112,10 @@ class T4CardsState extends State<T4Cards> {
                                     width: 16,
                                   ),
                                   SvgPicture.asset(
-                                    t4_share,
+                                    share,
                                     width: 22,
                                     height: 22,
-                                    color: t4_textColorPrimary,
+                                    color: textColorPrimary,
                                   ),
                                 ],
                               )

@@ -10,16 +10,16 @@ import 'package:blog_app/utils/strings.dart';
 import 'package:blog_app/utils/widgets.dart';
 import 'package:blog_app/utils/widgets/button.dart';
 
-class T4Detail extends StatefulWidget {
-  static var tag = "/T4Description";
+class Detail extends StatefulWidget {
+  static var tag = "/Description";
 
   @override
-  T4DetailState createState() => T4DetailState();
+  DetailState createState() => DetailState();
 }
 
-class T4DetailState extends State<T4Detail> {
+class DetailState extends State<Detail> {
   int selectedPos = 1;
-  List<T4NewsModel> mListings;
+  List<NewsModel> mListings;
 
   @override
   void initState() {
@@ -32,15 +32,15 @@ class T4DetailState extends State<T4Detail> {
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
     var height = MediaQuery.of(context).size.height;
-    changeStatusColor(t4_app_background);
+    changeStatusColor(app_background);
 
     return Scaffold(
-      backgroundColor: t4_app_background,
+      backgroundColor: app_background,
       body: Container(
         child: Column(
           mainAxisSize: MainAxisSize.max,
           children: <Widget>[
-            TopBar(t4_lbl_single_article),
+            TopBar(lbl_single_article),
             Expanded(
               child: SingleChildScrollView(
                 child: Container(
@@ -57,7 +57,7 @@ class T4DetailState extends State<T4Detail> {
                           ClipRRect(
                             borderRadius: BorderRadius.circular(4),
                             child: CachedNetworkImage(
-                              imageUrl: t4_img2,
+                              imageUrl: img2,
                               width: (width - 48) * 0.5,
                               height: height * 0.3,
                               fit: BoxFit.cover,
@@ -69,7 +69,7 @@ class T4DetailState extends State<T4Detail> {
                           ClipRRect(
                             borderRadius: BorderRadius.circular(4),
                             child: CachedNetworkImage(
-                              imageUrl: t4_img4,
+                              imageUrl: img4,
                               width: (width - 48) * 0.5,
                               height: height * 0.3,
                               fit: BoxFit.cover,
@@ -82,8 +82,8 @@ class T4DetailState extends State<T4Detail> {
                       ),
                       Padding(
                         padding: const EdgeInsets.all(16.0),
-                        child: text(t4_samplelong_text,
-                            textColor: t4_textColorPrimary,
+                        child: text(samplelong_text,
+                            textColor: textColorPrimary,
                             fontSize: textSizeMedium,
                             maxLine: 10),
                       ),
@@ -103,18 +103,18 @@ class T4DetailState extends State<T4Detail> {
                                 children: <Widget>[
                                   CircleAvatar(
                                     backgroundImage:
-                                        CachedNetworkImageProvider(t4_profile),
+                                        CachedNetworkImageProvider(profile),
                                     radius: 28,
                                   ),
                                   SizedBox(width: 16),
                                   Expanded(
                                     child: Column(
                                       children: <Widget>[
-                                        text(t4_username,
-                                            textColor: t4_textColorPrimary,
+                                        text(username,
+                                            textColor: textColorPrimary,
                                             fontSize: textSizeMedium,
                                             fontFamily: fontMedium),
-                                        text(t4_designation,
+                                        text(designation,
                                             fontSize: textSizeMedium)
                                       ],
                                       mainAxisAlignment:
@@ -126,8 +126,8 @@ class T4DetailState extends State<T4Detail> {
                                 ],
                               ),
                             ),
-                            T4Button(
-                              textContent: t4_lbl_follow,
+                            Button(
+                              textContent: lbl_follow,
                               isStroked: true,
                               height: 40,
                               onPressed: () {},
@@ -138,7 +138,7 @@ class T4DetailState extends State<T4Detail> {
                       Padding(
                         padding: const EdgeInsets.only(left: 16.0, right: 16.0),
                         child: text("Releted Articles",
-                            textColor: t4_textColorPrimary,
+                            textColor: textColorPrimary,
                             fontFamily: fontBold,
                             fontSize: textSizeNormal),
                       ),
@@ -179,7 +179,7 @@ class T4DetailState extends State<T4Detail> {
                                                   children: <Widget>[
                                                     text(mListings[index].name,
                                                         textColor:
-                                                            t4_textColorPrimary,
+                                                            textColorPrimary,
                                                         fontSize:
                                                             textSizeLargeMedium,
                                                         fontFamily: fontBold),
@@ -187,7 +187,7 @@ class T4DetailState extends State<T4Detail> {
                                                         fontSize:
                                                             textSizeMedium,
                                                         textColor:
-                                                            t4_textColorPrimary),
+                                                            textColorPrimary),
                                                     SizedBox(
                                                       height: 4,
                                                     ),

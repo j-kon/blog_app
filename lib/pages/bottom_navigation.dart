@@ -30,14 +30,14 @@ class T4BottomNavigationState extends State<T4BottomNavigation> {
 
   @override
   Widget build(BuildContext context) {
-    changeStatusColor(t4_app_background);
+    changeStatusColor(app_background);
 
     return Scaffold(
-      backgroundColor: t4_app_background,
+      backgroundColor: app_background,
       bottomNavigationBar: Container(
         decoration: BoxDecoration(boxShadow: [
           BoxShadow(
-              color: t4_shadow_color,
+              color: shadow_color,
               offset: Offset.fromDirection(3, 1),
               spreadRadius: 1,
               blurRadius: 5)
@@ -45,22 +45,22 @@ class T4BottomNavigationState extends State<T4BottomNavigation> {
         child: T4BottomNavigationBar(
           items: const <T4BottomNavigationBarItem>[
             T4BottomNavigationBarItem(
-              icon: t4_home,
+              icon: home,
             ),
             T4BottomNavigationBarItem(
-              icon: t4_playbutton,
+              icon: playbutton,
             ),
             T4BottomNavigationBarItem(
-              icon: t4_heart,
+              icon: heart,
             ),
             T4BottomNavigationBarItem(
-              icon: t4_user,
+              icon: user,
             ),
           ],
           currentIndex: _selectedIndex,
           unselectedIconTheme:
-              IconThemeData(color: t4_textColorSecondary, size: 24),
-          selectedIconTheme: IconThemeData(color: t4_colorPrimary, size: 24),
+              IconThemeData(color: textColorSecondary, size: 24),
+          selectedIconTheme: IconThemeData(color: colorPrimary, size: 24),
           onTap: _onItemTapped,
           type: T4BottomNavigationBarType.fixed,
         ),

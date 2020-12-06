@@ -8,14 +8,14 @@ import 'package:blog_app/utils/strings.dart';
 import 'package:blog_app/utils/widgets/button.dart';
 import 'package:blog_app/utils/widgets/edit_text.dart';
 
-class T4SignUp extends StatefulWidget {
-  static String tag = '/T4SignUp';
+class SignUp extends StatefulWidget {
+  static String tag = '/SignUp';
 
   @override
-  T4SignUpState createState() => T4SignUpState();
+  SignUpState createState() => SignUpState();
 }
 
-class T4SignUpState extends State<T4SignUp> {
+class SignUpState extends State<SignUp> {
   @override
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
@@ -26,7 +26,7 @@ class T4SignUpState extends State<T4SignUp> {
       body: Stack(
         children: <Widget>[
           CachedNetworkImage(
-            imageUrl: t4_bg,
+            imageUrl: bg,
             width: width,
             height: height,
             fit: BoxFit.cover,
@@ -47,30 +47,30 @@ class T4SignUpState extends State<T4SignUp> {
                 child: Column(
                   children: <Widget>[
                     CachedNetworkImage(
-                      imageUrl: t4_icon,
+                      imageUrl: icon,
                       width: width / 3.2,
-                      color: t4_white,
+                      color: white,
                     ),
                     SizedBox(height: 40),
                     T4EditText(
-                      hint: t4_hint_name,
+                      hint: hint_name,
                       isPassword: false,
                     ),
                     SizedBox(height: 24),
                     T4EditText(
-                      hint: t4_hint_phone,
+                      hint: hint_phone,
                       isPassword: false,
                     ),
                     SizedBox(height: 24),
                     T4EditText(
-                      hint: t4_hint_Email,
+                      hint: hint_Email,
                       isPassword: false,
                     ),
                     SizedBox(height: 24),
-                    T4EditText(hint: t4_hint_password, isSecure: true),
+                    T4EditText(hint: hint_password, isSecure: true),
                     SizedBox(height: 24),
-                    T4Button(
-                      textContent: t4_lbl_register_now,
+                    Button(
+                      textContent: lbl_register_now,
                       onPressed: () {},
                     ),
                   ],
